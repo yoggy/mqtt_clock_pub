@@ -38,7 +38,7 @@ def publish(c, t)
   h["epoch"] = t.to_i
   h["iso8601"] = t.iso8601
   json_str = h.to_json
-  puts json_str
+  puts "topic=" + $config["topic"] + ", message=" + json_str
   c.publish($config["topic"], json_str)
 end
 
